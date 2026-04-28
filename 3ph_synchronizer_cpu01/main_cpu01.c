@@ -5,7 +5,8 @@
 //
 // Defines
 //
-#define BLINKY_LED_GPIO 31
+#define BLINKY_LED_GPIO_BLUE 31
+#define BLINKY_LED_GPIO_RED 34
 void main(void)
 {
 //
@@ -20,8 +21,11 @@ void main(void)
 // illustrates how to set the GPIO to it’s default state.
 //
     InitGpio();
-    GPIO_SetupPinMux(BLINKY_LED_GPIO, GPIO_MUX_CPU1, 0);
-    GPIO_SetupPinOptions(BLINKY_LED_GPIO, GPIO_OUTPUT, GPIO_PUSHPULL);
+    GPIO_SetupPinMux(BLINKY_LED_GPIO_BLUE, GPIO_MUX_CPU1, 0);
+    GPIO_SetupPinMux(BLINKY_LED_GPIO_RED, GPIO_MUX_CPU2, 0);
+    GPIO_SetupPinOptions(BLINKY_LED_GPIO_BLUE, GPIO_OUTPUT, GPIO_PUSHPULL);
+    GPIO_SetupPinOptions(BLINKY_LED_GPIO_RED, GPIO_OUTPUT, GPIO_PUSHPULL);
+
 //
 // Step 3. Loop to blink LED
 //
@@ -30,7 +34,7 @@ void main(void)
         //
         // Turn on LED
         //
-        GPIO_WritePin(BLINKY_LED_GPIO, 0);
+        GPIO_WritePin(BLINKY_LED_GPIO_BLUE, 0);
         //
         // Delay for a bit.
         //
@@ -38,7 +42,7 @@ void main(void)
         //
         // Turn off LED
         //
-        GPIO_WritePin(BLINKY_LED_GPIO, 1);
+        GPIO_WritePin(BLINKY_LED_GPIO_BLUE, 1);
         //
         // Delay for a bit.
         //
