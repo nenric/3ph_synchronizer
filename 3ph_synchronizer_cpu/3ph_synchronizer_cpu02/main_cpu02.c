@@ -26,7 +26,7 @@ void main(void)
         //
         // Delay for a bit.
         //
-        DELAY_US(500*500);
+        DELAY_US(1000*500);
         //
         // Turn off LED
         //
@@ -34,6 +34,6 @@ void main(void)
         //
         // Delay for a bit.
         //
-        DELAY_US(500*500);
+        DELAY_US(1000*500);
     }
 }
